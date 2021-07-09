@@ -97,11 +97,11 @@ def checkAll():
     for q in amznProducts:
         if q.amazonLink != "" and amazon.check(q.amazonLink) == True:
             telegram_send.send(messages=[q.name, "seems be be in stock Amazon"])
-            print(time.ctime(), "Alert!!", q.name, "in stock Amazon!")
+            print(time.ctime(), "\033[1;41;40m Alert!!", q.name, "in stock Amazon!\033[0m")
 
 
-print(time.ctime(), "Script Start")
+print(time.ctime(), "\033[34m Script Start\033[0m")
 while True:
     checkAll()
-    print(time.ctime(), "No Stock Found. Staring New Cycle")
+    print(time.ctime(), "\033[1;30m No Stock Found. Staring New Cycle\033[0m")
     time.sleep(12.5 - random.random() * 5)
